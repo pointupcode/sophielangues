@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Aprendizaje de Idiomas</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="../css/video-js.css" rel="stylesheet" />
+    <script src="../js/video.min.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Plataforma de Idiomas</h1>
+    </header>
+    <main>
+        <section class="dashboard">
+            <h2>Mi Dashboard</h2>
+            <div class="video-container">
+                <video 
+                id="VideoEjemplo1"
+                class="video-js"
+                controls
+                preload="auto"
+                width="533"
+                height="300"
+                data-setup="{}"
+              >
+                <source src="../material/VideoEjemplo/VideoEjemplo_1.m3u8" type="application/x-mpegURL" />
+                <p class="vjs-no-js">
+                  To view this video please enable JavaScript, and consider upgrading to a
+                  web browser that
+                  <a href="https://videojs.com/html5-video-support/" target="_blank"
+                    >supports HTML5 video</a
+                  >
+                </p>
+              </video>
+                <div class="video-controls">
+                    <button id="playPauseBtn">Reproducir</button>
+                    <input type="range" id="seekBar" value="0" min="0" max="100">
+                    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                    <button id="muteBtn">Silenciar</button>
+                    <input type="range" id="volumeBar" value="100" min="0" max="100">
+                    <button id="fullScreenBtn">Pantalla Completa</button>
+                </div>
+            </div>
+            <div class="module-info">
+              <h3>Módulo Actual</h3>
+                <div class="documentation">
+                    <h4>Documentación</h4>
+                    <ul id="module-documentation">
+                        <li><a href="ruta/al/documento1.pdf" target="_blank">Documento 1</a></li>
+                        <li><a href="ruta/al/documento2.pdf" target="_blank">Documento 2</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modules-status">
+                <h3>Progreso del Curso</h3>
+                <ul id="module-list">
+                   <!-- Aquí se insertan los módulos -->
+                </ul>
+            </div>
+        </section>
+        <section class="my-courses">
+            <h2>Mis Cursos</h2>
+            <ul id="my-courses-list">
+            <!-- Aquí se insertan los cursos comprados -->
+            </ul>
+        </section>
+         <section class="available-courses">
+            <h2>Cursos Disponibles</h2>
+            <ul id="available-courses-list">
+                <!-- Aquí se insertan los cursos disponibles -->
+            </ul>
+        </section>
+        <section class="help-section">
+          <h2>¿Necesitas Ayuda?</h2>
+            <form id="help-form">
+              <label for="name">Nombre:</label>
+              <input type="text" id="name" required>
+              <label for="email">Email:</label>
+              <input type="email" id="email" required>
+              <label for="message">Mensaje:</label>
+              <textarea id="message" rows="4" required></textarea>
+              <button type="submit">Enviar Consulta</button>
+            </form>
+            <div id="response-message" style="display: none;">
+               <p>¡Gracias! Su mensaje ha sido enviado.</p>
+            </div>
+       </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Plataforma de Aprendizaje de Idiomas</p>
+    </footer>
+  <script src="script.js"></script>
+</body>
+</html>

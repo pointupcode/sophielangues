@@ -1,0 +1,30 @@
+RewriteEngine on
+RewriteBase /sophielangues
+#RewriteBase /
+
+RewriteCond %{SCRIPT_FILENAME} !-d  
+RewriteCond %{SCRIPT_FILENAME} !-f  
+
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteRule ^(.*)\.(css|js|png|jpg|jpeg|gif|svg|ico)$ - [L]
+
+RewriteRule ^inicio$ index.php [QSA,L]
+
+#Usuarios
+RewriteRule ^miscursos$ estudiantes/estudiantes_miscursos.php [QSA,L]
+RewriteRule ^misdatos$ estudiantes/estudiantes_misdatos.php [QSA,L]
+RewriteRule ^micurso$ estudiantes/estudiantes_micurso.php?curso=$1 [QSA,L]
+RewriteRule ^mesadeayuda$ estudiantes/estudiantes_mesadeayuda.php?curso=$1 [QSA,L]
+RewriteRule ^registro$ includes/registro_include.php [QSA,L]
+RewriteRule ^usuario_insert$ estudiantes/usuario_insert.php [QSA,L]
+
+#Login
+RewriteRule ^login_include$ includes/login_include.php [QSA,L]
+RewriteRule ^ingresar$ includes/login_access.php [QSA,L]
+RewriteRule ^login$ includes/login.php [QSA,L]
+RewriteRule ^logout$ includes/logout.php [QSA,L]
+
+
+ErrorDocument 404 /errores/404.php
