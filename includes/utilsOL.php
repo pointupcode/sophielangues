@@ -3,7 +3,7 @@ $db = [
   'host' => 'localhost',
   'username' => 'sophiela_admin',
   'password' => '5dppG)Mn8R4*W3',
-  'db' => 'sophiela_plataforma',
+  'db' => 'sophiela_cursosol',
   'charset' => 'utf8mb4'
 ];
   //Abrir conexion a la base de datos
